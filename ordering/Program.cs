@@ -2,6 +2,9 @@ using GloboTicket.Ordering.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Docker support change
+builder.Configuration.AddEnvironmentVariables();
+
 // Add services to the container.
 
 

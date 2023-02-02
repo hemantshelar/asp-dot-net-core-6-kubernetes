@@ -5,6 +5,9 @@ using GloboTicket.Frontend.Services.ShoppingBasket;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Docker support change
+builder.Configuration.AddEnvironmentVariables();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

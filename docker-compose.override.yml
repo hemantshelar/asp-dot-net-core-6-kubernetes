@@ -16,6 +16,7 @@ services:
   catalog:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTIONSTRINGS__DEFAULTCONNECTION= Server=sqlserver;Database=EventCatalogDb;User=sa;pwd=P@55w0rD!;MultipleActiveResultSets=true"
     ports:
       - "80"
     volumes:
@@ -28,3 +29,10 @@ services:
       - "80"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:latest
+    environment:
+      - ACCEPT_ELUA:TRUE
+      - MSSQL_SA_PASSWORD=P@55w0rD!
